@@ -1,4 +1,4 @@
-package add.datastructures;
+package aad.datastructures;
 /**
  * circular two way list
  * jre 1.6 or later required

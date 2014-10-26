@@ -1,4 +1,4 @@
-package add.datastructures;
+package aad.datastructures;
 /**
  * @author Martin Zuber
  * JRE 1.6 required

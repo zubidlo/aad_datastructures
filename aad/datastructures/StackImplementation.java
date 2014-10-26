@@ -1,4 +1,4 @@
-package add.datastructures;
+package aad.datastructures;
 /**
  * Generic Stack implementation using linked list 
  * jre 1.6 or later required
@@ -9,7 +9,7 @@ package add.datastructures;
 public class StackImplementation<E> implements Stack<E>{
 
 	//+++++++++++++ private fields ++++++++++++++++++++
-	private ListImplementation<E> list;
+	private List<E> list;
 	
 	//+++++++++++++ constructor +++++++++++++++++++++++
 	public StackImplementation() { list = new ListImplementation<E>(); }

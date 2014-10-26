@@ -1,4 +1,4 @@
-package add.datastructures;
+package aad.datastructures;
 
 /**
  * linked list implementation
