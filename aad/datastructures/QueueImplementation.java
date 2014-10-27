@@ -2,7 +2,7 @@ package aad.datastructures;
 
 public class QueueImplementation<E> implements Queue<E> {
 
-	private List<E> list;
+	private ListImplementation<E> list;
 	
 	public QueueImplementation() { list = new ListImplementation<E>(); }
 	

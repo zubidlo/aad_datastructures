@@ -30,10 +30,16 @@ public class ListImplementation<T> implements List<T>{
 	//+++++++++++++++++ constructor ++++++++++++++++++++++++
 	public ListImplementation() { initializeList(); }
 	
-	@Override
+	/**
+	 * returns first node in the list
+	 * @return reference to the head of the list
+	 */
 	public Node<T> getHead() { return head; }
 	
-	@Override
+	/**
+	 * returns last node int the list
+	 * @return reference to tail node
+	 */
 	public Node<T> getTail() { return tail; }
 	
 	@Override
@@ -42,7 +48,12 @@ public class ListImplementation<T> implements List<T>{
 	@Override
 	public int size() {	return numItems; }
 	
-	@Override
+	/**
+	 * returns the node which is at the given position in the list
+	 * @param position position of desired node
+	 * @return reference to the node at given index
+	 * @throws IllegalArgumentException if position < 1 or position > size()
+	 */
 	public Node<T> getNodeAtIndex(int index) throws IllegalArgumentException {
 		
 		if (index == 1) return head;
@@ -153,7 +164,15 @@ public class ListImplementation<T> implements List<T>{
 		numItems--;
 	} // end remove()
 	
-	@Override
+	/**
+	 * removes node from the list
+	 * This method is weak and doesn't check if given node
+	 * is actually in the list.
+	 * Therefore this method can crush and throw various exceptions
+	 * @param node reference to the node in the list
+	 * @throws IllegalArgumentException if position < 1 or position > size()
+	 * @throws RuntimeException if list is empty already
+	 */
 	public void removeNode(Node<T> node) throws IllegalArgumentException, RuntimeException {
 		
 		//sanity check
