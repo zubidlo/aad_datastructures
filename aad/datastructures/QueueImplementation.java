@@ -2,9 +2,9 @@ package aad.datastructures;
 
 public class QueueImplementation<E> implements Queue<E> {
 
-	private ListImplementation<E> list;
+	private LinkedListImplementation<E> list;
 	
-	public QueueImplementation() { list = new ListImplementation<E>(); }
+	public QueueImplementation() { list = new LinkedListImplementation<E>(); }
 	
 	@Override
 	public boolean isEmpty() { return list.isEmpty(); }
@@ -22,10 +22,11 @@ public class QueueImplementation<E> implements Queue<E> {
 	}
 
 	@Override
-	public void dequeueAll() { list = new ListImplementation<E>(); }
+	public void dequeueAll() { list = new LinkedListImplementation<E>(); }
 
 	@Override
 	public E peek() throws RuntimeException {
+		
 		if (list.isEmpty()) throw new RuntimeException("can't peek item from empty queue");
 		return list.getTail().getItem();
 	}

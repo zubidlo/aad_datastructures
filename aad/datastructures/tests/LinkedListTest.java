@@ -9,12 +9,12 @@ import aad.datastructures.*;
 
 public class LinkedListTest {
 
-	ListImplementation<String> list;
+	LinkedListImplementation<String> list;
 	Node<String> first, second, third;
 	
 	@Before
 	public void setUp(){
-		list = new ListImplementation<String>();
+		list = new LinkedListImplementation<String>();
 		
 		first = new NodeImplementation<String>("first");
 		second = new NodeImplementation<String>("second");

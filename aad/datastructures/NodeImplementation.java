@@ -39,6 +39,7 @@ public class NodeImplementation<T> implements Node<T> {
 	
 	@Override
 	public String toString() {
+		
 		String previousItem, thisItem, nextItem;
 		previousItem = (previous == null) ? "null" : previous.getItem().toString();
 		thisItem = getItem().toString();

@@ -7,7 +7,7 @@ package aad.datastructures;
  * @version 1.0
  * @param <T> any type
  */
-public class ListImplementation<T> implements List<T>{
+public class LinkedListImplementation<T> implements List<T>{
 	
 	private Node<T> head;
 	private Node<T> tail;
@@ -28,7 +28,7 @@ public class ListImplementation<T> implements List<T>{
 	}
 
 	//+++++++++++++++++ constructor ++++++++++++++++++++++++
-	public ListImplementation() { initializeList(); }
+	public LinkedListImplementation() { initializeList(); }
 	
 	/**
 	 * returns first node in the list

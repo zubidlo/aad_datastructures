@@ -8,18 +8,15 @@ package aad.datastructures;
  */
 public class StackImplementation<E> implements Stack<E>{
 
-	//+++++++++++++ private fields ++++++++++++++++++++
 	private List<E> list;
 	
-	//+++++++++++++ constructor +++++++++++++++++++++++
-	public StackImplementation() { list = new ListImplementation<E>(); }
+	public StackImplementation() { list = new LinkedListImplementation<E>(); }
 
-	//+++++++++++++ interface methods +++++++++++++++++
 	@Override
 	public boolean isEmpty() { return list.isEmpty(); }
 
 	@Override
-	public void popAll() { list = new ListImplementation<E>(); }
+	public void popAll() { list = new LinkedListImplementation<E>(); }
 
 	@Override
 	public void push(E newItem) { list.addItemAtTheEnd(newItem); }
