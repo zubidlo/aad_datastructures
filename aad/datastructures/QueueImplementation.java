@@ -15,7 +15,9 @@ public class QueueImplementation<E> implements Queue<E> {
 	@Override
 	public E dequeue() throws RuntimeException {
 		
-		if (list.isEmpty()) throw new RuntimeException("can't dequeue item from empty queue");
+		if (list.isEmpty()) {
+			throw new RuntimeException("can't dequeue item from empty queue");
+		}
 		E item = list.getItemAtIndex(list.size());
 		list.removeItemAtTheEnd();
 		return item;
@@ -27,14 +29,18 @@ public class QueueImplementation<E> implements Queue<E> {
 	@Override
 	public E peek() throws RuntimeException {
 		
-		if (list.isEmpty()) throw new RuntimeException("can't peek item from empty queue");
+		if (list.isEmpty()) {
+			throw new RuntimeException("can't peek item from empty queue");
+		}
 		return list.getTail().getItem();
 	}
 	
 	@Override
 	public String toString() { 
 		
-		if(isEmpty()) return "queue(empty)";
+		if(isEmpty()) {
+			return "queue(empty)";
+		}
 		return list.toString().replaceFirst("list", "queue");
 	}
 }

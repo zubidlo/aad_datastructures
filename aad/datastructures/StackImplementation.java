@@ -32,14 +32,18 @@ public class StackImplementation<E> implements Stack<E>{
 	@Override
 	public E top() throws RuntimeException {
 		
-		if (list.isEmpty()) throw new RuntimeException("stack is empty");
+		if (list.isEmpty()) {
+			throw new RuntimeException("stack is empty");
+		}
 		return list.getItemAtIndex(list.size());
 	}
 	
 	@Override
 	public String toString() { 
 		
-		if(isEmpty()) return "stack(empty)";
+		if(isEmpty()) {
+			return "stack(empty)";
+		}
 		return list.toString().replaceFirst("list", "stack");
 	}
 }

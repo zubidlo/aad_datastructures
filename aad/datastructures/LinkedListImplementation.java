@@ -23,7 +23,9 @@ public class LinkedListImplementation<T> implements List<T>{
 	private Node<T> findNodeAtIndex(int index) {
 		
 		Node<T> resultNode = head;
-		for (int i = 1; i < index; i++)	resultNode = resultNode.getNext();
+		for (int i = 1; i < index; i++)	{
+			resultNode = resultNode.getNext();
+		}
 		return resultNode;
 	}
 
@@ -56,9 +58,15 @@ public class LinkedListImplementation<T> implements List<T>{
 	 */
 	public Node<T> getNodeAtIndex(int index) throws IllegalArgumentException {
 		
-		if (index == 1) return head;
-		if (index > 1 && index < size()) return findNodeAtIndex(index);
-		if (index == size()) return tail;
+		if (index == 1) {
+			return head;
+		}
+		if (index > 1 && index < size()) {
+			return findNodeAtIndex(index);
+		}
+		if (index == size()) {
+			return tail;
+		}
 	
 		throw new IllegalArgumentException("index out of bound");
 	}
@@ -87,8 +95,9 @@ public class LinkedListImplementation<T> implements List<T>{
 	public void addItem(int index, T item) throws IllegalArgumentException {
 
 		//sanity check
-		if(index < 1 || index > size() + 1)
+		if(index < 1 || index > size() + 1)	{
 			throw new IllegalArgumentException("index out of bound");
+		}
 			
 		Node<T> newNode = new NodeImplementation<T>(item);
 		
@@ -137,14 +146,19 @@ public class LinkedListImplementation<T> implements List<T>{
 	public void removeItemAtIndex(int index) throws RuntimeException, IllegalArgumentException {
 		
 		//sanity checks
-		if(index < 1 || index > size())	throw new IllegalArgumentException("index out of bound");
-		if(isEmpty()) throw new RuntimeException("list is empty");
+		if(index < 1 || index > size())	{
+			throw new IllegalArgumentException("index out of bound");
+		}
+		if(isEmpty()) {
+			throw new RuntimeException("list is empty");
+		}
 		
 		if(size() == 1) {
 			//this removes first (last) item in the list with one item in it;
 			removeAllItems();
 			return;
-		}else if(index == 1) {
+		}
+		else if(index == 1) {
 			//this removes first item in the list with two or more items in it
 			head = head.getNext();
 			setReferencesAfterDeleting(tail, head);
@@ -176,16 +190,26 @@ public class LinkedListImplementation<T> implements List<T>{
 	public void removeNode(Node<T> node) throws IllegalArgumentException, RuntimeException {
 		
 		//sanity check
-		if(node == null) throw new IllegalArgumentException("node is null");
-		if (isEmpty()) throw new RuntimeException("list is empty");
+		if(node == null) {
+			throw new IllegalArgumentException("node is null");
+		}
+		if (isEmpty()) {
+			throw new RuntimeException("list is empty");
+		}
 		
-		if(size() == 1) removeAllItems();
+		if(size() == 1) {
+			removeAllItems();
+		}
 		else {
 			Node<T> previousNode = node.getPrevious();
 			Node<T> nextNode = node.getNext();
 			setReferencesAfterDeleting(previousNode, nextNode);
-			if(node == getHead()) head = nextNode;
-			else if(node == getTail()) tail = previousNode;
+			if(node == getHead()) {
+				head = nextNode;
+			}
+			else if(node == getTail()) {
+				tail = previousNode;
+			}
 			numItems--;
 		}
 	}//end removeNode()
@@ -193,7 +217,9 @@ public class LinkedListImplementation<T> implements List<T>{
 	@Override
 	public String toString() {
 
-		if (isEmpty()) return "list(empty)\n";
+		if (isEmpty()) {
+			return "list(empty)\n";
+		}
 		
 		String output = "list(\n";
 		Node<T> currentNode = head;
