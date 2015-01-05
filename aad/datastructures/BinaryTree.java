@@ -1,51 +1,49 @@
 package aad.datastructures;
 
 /**
- * binnary tree interface jre 1.6 or later required
+ * int binnary tree interface jre 1.6 or later required
  * 
  * @author Martin Zuber B00066378
  * @version 1.0
- * @param <T>
- *            any type
  */
-public interface BinaryTree<T> {
+public interface BinaryTree {
 	
 	/**
 	 * adds a value in the binary tree
 	 * @param value any type
 	 */
-	void add(T value);
+	void add(int value);
 	
 	/**
 	 * returns true if binary tree contains the value
 	 * @param value any type
 	 * @return true or false
 	 */
-	boolean contains(T value);
+	boolean contains(int value);
 	
 	/**
 	 * Returns List of binary tree values in order
 	 * @return {@link List}
 	 */
-	List<T> inOrder();
+	List inOrder();
 	
 	/**
 	 * Returns List of binary tree values pre order
 	 * @return {@link List}
 	 */
-	List<T> preOrder();
+	List preOrder();
 	
 	/**
 	 * Returns List of binary tree values post order
 	 * @return {@link List}
 	 */
-	List<T> postOrder();
+	List postOrder();
 	
 	/**
 	 * removes a value for binary tree
 	 * @param value any type
 	 */
-	void remove(T value);
+	void remove(int value);
 	
 	/**
 	 * returns height of the binary tree

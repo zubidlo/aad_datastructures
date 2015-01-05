@@ -1,46 +1,46 @@
 package aad.datastructures;
 
 /**
- * binary tree node
+ * int binary tree node
  * @author Martin Zuber JRE 1.6 required
  * @version 1.0
- * @param <T> any type
+ * @param int
  */
-public interface BinaryTreeNode<T> {
+public interface BinaryTreeNode {
 	
 	/**
 	 * returns value stored in the node
 	 * @return T
 	 */
-	T getValue();
+	int getValue();
 	
 	/**
 	 * sets value of the node
 	 * @param value any type
 	 */
-	void setValue(T value);
+	void setValue(int value);
 	
 	/**
 	 * returns left subtree root
 	 * @return {@link BinaryTreeNode}
 	 */
-	BinaryTreeNode<T> left();
+	BinaryTreeNode getLeft();
 	
 	/**
 	 * returns right subtree root
 	 * @return {@link BinaryTreeNode}
 	 */
-	BinaryTreeNode<T> right();
+	BinaryTreeNode getRight();
 	
 	/**
 	 * sets left subtree root
 	 * @param left {@link BinaryTreeNode}
 	 */
-	void setLeft(BinaryTreeNode<T> left);
+	void setLeft(BinaryTreeNode left);
 	
 	/**
 	 * sets right subtree root
 	 * @param right {@link BinaryTreeNode}
 	 */
-	void setRight(BinaryTreeNode<T> right);
+	void setRight(BinaryTreeNode right);
 }
