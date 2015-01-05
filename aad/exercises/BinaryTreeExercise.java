@@ -17,6 +17,14 @@ public class BinaryTreeExercise {
         tree.add(12);
         tree.add(4);
         tree.add(5);
+        tree.add(1);
+        tree.add(6);
+        tree.add(10);
+
+        System.out.println("heigh:" + tree.getHeight());
+        System.out.println(tree.preOrder());
+
+        System.out.print(tree.contains(12));
 
         return;
     }

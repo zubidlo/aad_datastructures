@@ -52,31 +52,75 @@ public class BinaryTreeImplementation implements BinaryTree {
 	public void add(int value) {
 		subTreeHeight = 0;
 		BinaryTreeNode node = add(root, value);
-		height = height < subTreeHeight ? subTreeHeight : height;
+		if (height < subTreeHeight) {
+			height = subTreeHeight;
+		}
 	}
 
 	@Override
 	public boolean contains(int value) {
-		// TODO Auto-generated method stub
-		return false;
+
+		return contains(root, value);
+	}
+
+	private boolean contains(BinaryTreeNode root, int value) {
+		if (root == null) {
+			return false;
+		}
+		if (value < root.getValue()) {
+			return contains(root.getLeft(), value);
+		}
+		if (value > root.getValue()) {
+			return contains(root.getRight(), value);
+		}
+		return true;
 	}
 
 	@Override
 	public List inOrder() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Integer> list = new LinkedListImplementation<Integer>();
+		inOrder(root, list);
+		return list;
 	}
+
+	private void inOrder(BinaryTreeNode root, List list) {
+		if (root != null) {
+			inOrder(root.getLeft(), list);
+			list.addItemAtTheEnd(root.getValue());
+			inOrder(root.getRight(), list);
+		}
+	}
+
+
 
 	@Override
 	public List preOrder() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Integer> list = new LinkedListImplementation<Integer>();
+		preOrder(root, list);
+		return list;
+	}
+
+	private void preOrder(BinaryTreeNode root, List<Integer> list) {
+		if (root != null) {
+			list.addItemAtTheEnd(root.getValue());
+			preOrder(root.getLeft(), list);
+			preOrder(root.getRight(), list);
+		}
 	}
 
 	@Override
 	public List postOrder() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Integer> list = new LinkedListImplementation<Integer>();
+		postOrder(root, list);
+		return list;
+	}
+
+	private void postOrder(BinaryTreeNode root, List<Integer> list) {
+		if (root != null) {
+			postOrder(root.getLeft(), list);
+			postOrder(root.getRight(), list);
+			list.addItemAtTheEnd(root.getValue());
+		}
 	}
 
 	@Override
@@ -86,7 +130,7 @@ public class BinaryTreeImplementation implements BinaryTree {
 	}
 
 	@Override
-	public int height() {
+	public int getHeight() {
 		return height;
 	}
 

@@ -46,8 +46,8 @@ public interface BinaryTree {
 	void remove(int value);
 	
 	/**
-	 * returns height of the binary tree
-	 * @return int height
+	 * returns getHeight of the binary tree
+	 * @return int getHeight
 	 */
-	int height();
+	int getHeight();
 }
